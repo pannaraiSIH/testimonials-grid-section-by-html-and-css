@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/* font-family: 'Barlow Semi Condensed', sans-serif; */
+
+
+/* Note for text colors:
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+
+/* ******************** */
+/*  VARIABLES  */
+/* ******************** */
+
+:root {
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+
+    --fs: 0.8125rem;
+
+    --transition: all 1s ease-in-out;
+}
+
+
+
+/* ******************** */
+/*  RESET  */
+/* ******************** */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ******************** */
+/*  GLOBAL  */
+/* ******************** */
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: var(--fs);
+    color: var(--White);
+    background-color: var(--Light-grayish-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-wrapper {
+    border-radius: .6rem;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    box-shadow: 20px 15px 35px -15px hsl(210, 19%, 79%);
+    transition: var(--transition);
+}
+
+.content-wrapper > p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.content-wrapper img {
+    max-width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.info-box {
+    display: flex;
+    gap: 1rem;
+}
+
+.info-split h1 {
+    font-size: .8rem;
+}
+
+.info-split p {
+    font-size: .7rem;
+    color: hsla(0, 0%, 100%, .5);
+}
+
+blockquote {
+    font-size: .8rem;
+    color: hsla(0, 0%, 100%, .7);
+    transition: var(--transition);
+}
+
+
+
+/* ******************** */
+/*  LAYOUT  */
+/* ******************** */
+
+.container {
+    max-width: 70rem;
+    margin: 3rem 1.5rem;
+}
+
+.grid-area {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: 
+        "one"
+        "two"
+        "three"
+        "four"
+        "five";
+    grid-auto-columns: 1fr;
+    transition: var(--transition);
+}
+
+.daniel {
+    grid-area: one;
+}
+
+.jonathan {
+    grid-area: two;
+}
+
+.jeanette {
+    grid-area: three;
+}
+
+.patrick {
+    grid-area: four;
+}
+
+.kira {
+    grid-area: five;
+}
+
+
+
+/* ******************** */
+/*  DANIEL  */
+/* ******************** */
+
+.daniel {
+    background-color: var(--Moderate-violet);
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 90% 0;
+}
+
+.daniel img {
+    border: 2px solid hsl(263, 48%, 63%);
+}
+
+
+
+/* ******************** */
+/*  JONATHAN  */
+/* ******************** */
+
+.jonathan {
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+
+
+/* ******************** */
+/*  JEANNETTE  */
+/* ******************** */
+
+.jeanette {
+    background-color: var(--White);
+}
+
+.jeanette .info-split > * {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.jeanette .info-split p {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.jeanette > p {
+    color: hsl(217, 19%, 35%);
+}
+
+.jeanette blockquote {
+    color: hsla(217, 19%, 35%, .7);
+}
+
+
+
+/* ******************** */
+/*  PATRICK  */
+/* ******************** */
+
+.patrick {
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+.patrick img {
+    border: 2px solid var(--Moderate-violet);
+}
+
+
+
+/* ******************** */
+/*  KIRA  */
+/* ******************** */
+
+.kira {
+    background-color: var(--White);
+}
+
+.kira > p {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.kira .info-split h1 {
+    color: var(--Very-dark-grayish-blue);
+}
+
+.kira .info-split > p {
+    color: hsl(217, 19%, 35%, .5);
+}
+
+.kira blockquote {
+    color: hsla(217, 19%, 35%, .7);
+}
+
+
+/* ******************** */
+/*  MEDIA-QUERY  */
+/* ******************** */
+
+@media screen and (min-width: 35rem) {
+    .grid-area {
+        grid-template-areas: 
+            "one one"
+            "two five"
+            "three five"
+            "four four";
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 60rem) {
+    .grid-area {
+        grid-template-areas: 
+            "one one two five"
+            "three four four five";
+        gap: 1.8rem;
+    }
+
+    .daniel {
+        background-position: 85% 0;
+    }
+}
+
+
